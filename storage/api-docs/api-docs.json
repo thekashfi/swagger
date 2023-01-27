@@ -1,42 +1,49 @@
 {
     "openapi": "3.0.0",
     "info": {
-        "title": "Example API",
-        "description": "Example info",
+        "title": "Site main api",
+        "description": "the main api documentation of localhost:8000 site version 1.0",
         "contact": {
             "name": "Swagger API Team"
         },
-        "version": "1.0"
+        "version": "v1"
     },
     "servers": [
         {
-            "url": "https://example.localhost",
-            "description": "API server"
+            "url": "https://localhost:8000/api/v1",
+            "description": "Api/v1"
         }
     ],
     "paths": {
         "/user": {
-            "post": {
+            "get": {
                 "tags": [
                     "user"
                 ],
-                "summary": "Create user",
-                "description": "This can only be done by the logged in user.",
-                "operationId": "createUser",
-                "requestBody": {
-                    "description": "Create user object",
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/User"
-                            }
-                        }
-                    }
-                },
+                "summary": "Get a single user",
+                "description": "get a single user record json info.",
+                "operationId": "getUser",
                 "responses": {
-                    "default": {
-                        "description": "successful operation"
+                    "200": {
+                        "description": "Successfully get the user record"
+                    },
+                    "404": {
+                        "description": "User Not Found"
+                    }
+                }
+            }
+        },
+        "/users": {
+            "get": {
+                "tags": [
+                    "user"
+                ],
+                "summary": "Get 10 users",
+                "description": "get 10 users info as json array of users.",
+                "operationId": "getUsers",
+                "responses": {
+                    "200": {
+                        "description": "Successfully get array list of users"
                     }
                 }
             }

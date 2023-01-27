@@ -8,14 +8,14 @@ namespace App;
 *     description="User related operations"
 * )
 * @OA\Info(
-*     version="1.0",
-*     title="Example API",
-*     description="Example info",
+*     version="v1",
+*     title="Site main api",
+*     description="the main api documentation of localhost:8000 site version 1.0",
 *     @OA\Contact(name="Swagger API Team")
 * )
 * @OA\Server(
-*     url="https://example.localhost",
-*     description="API server"
+*     url="https://localhost:8000/api/v1",
+*     description="Api/v1"
 * )
 */
 class OpenApiSpec
